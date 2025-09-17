@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function Usuario({ usuario, saludar }) {
   return (
@@ -17,5 +18,14 @@ function Usuario({ usuario, saludar }) {
     </div>
   );
 }
+
+Usuario.propTypes = {
+  usuario: PropTypes.shape({
+    nombre: PropTypes.string.isRequired,
+    edad: PropTypes.number.isRequired,
+    ciudad: PropTypes.string.isRequired,
+  }).isRequired,
+  saludar: PropTypes.func.isRequired,
+};
 
 export default Usuario;
